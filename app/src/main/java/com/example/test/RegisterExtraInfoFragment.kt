@@ -42,6 +42,7 @@ class RegisterExtraInfoFragment : Fragment() {
         val yearAdapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, years)
         yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         yearSpinner.adapter = yearAdapter
+        yearSpinner.setSelection(77, true) // 2000으로 설정
 
         // 월 Spinner
         val months = (1..12).toList()
@@ -56,6 +57,9 @@ class RegisterExtraInfoFragment : Fragment() {
         yearSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 updateDays(daySpinner, yearSpinner.selectedItem as Int, monthSpinner.selectedItem as Int)
+                if (position == 0) {
+                    yearSpinner.setSelection(77, true) // 2000으로 설정
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
