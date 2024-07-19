@@ -2,6 +2,7 @@ package com.example.test
 
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
@@ -10,19 +11,31 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.AdapterView
 import android.view.View
+import com.example.test.databinding.Signup2Binding
+import com.example.test.databinding.Signup3Binding
 
-
+private const val TAG = "MainActivity 싸피"
 class MainActivity : AppCompatActivity() {
+    private val binding by lazy{
+        Signup2Binding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.signup2)
+        Log.d(TAG, "onCreate: ")
+
+        setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.extra_info)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+//        val years = (1923..2023).toList()
+//        val yearAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, years)
+//        yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        binding.yearSpinner.adapter = yearAdapter
+
 
         // Spinner 초기화
         setupSpinners()
@@ -31,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupSpinners() {
+
         val yearSpinner: Spinner = findViewById(R.id.yearSpinner)
         val monthSpinner: Spinner = findViewById(R.id.monthSpinner)
         val daySpinner: Spinner = findViewById(R.id.daySpinner)
