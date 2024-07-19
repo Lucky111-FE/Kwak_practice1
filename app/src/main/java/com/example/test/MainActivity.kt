@@ -3,16 +3,13 @@ package com.example.test
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import android.widget.AdapterView
-import android.view.View
-import androidx.viewpager2.widget.ViewPager2
 import com.example.test.databinding.ActivityMainBinding
+
 
 private const val TAG = "MainActivity 싸피"
 class MainActivity : AppCompatActivity() {
