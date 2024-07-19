@@ -13,11 +13,12 @@ import android.widget.AdapterView
 import android.view.View
 import com.example.test.databinding.Signup2Binding
 import com.example.test.databinding.Signup3Binding
+import com.example.test.databinding.Signup5Binding
 
 private const val TAG = "MainActivity 싸피"
 class MainActivity : AppCompatActivity() {
     private val binding by lazy{
-        Signup2Binding.inflate(layoutInflater)
+        Signup5Binding.inflate(layoutInflater)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
 
         // Spinner 초기화
-        setupSpinners()
+//        setupSpinners()
 
 
     }
