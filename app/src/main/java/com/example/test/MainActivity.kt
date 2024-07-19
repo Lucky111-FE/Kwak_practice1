@@ -11,26 +11,22 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.AdapterView
 import android.view.View
-import com.example.test.databinding.Signup2Binding
-import com.example.test.databinding.Signup3Binding
+import androidx.viewpager2.widget.ViewPager2
+import com.example.test.databinding.ActivityMainBinding
 
 private const val TAG = "MainActivity 싸피"
 class MainActivity : AppCompatActivity() {
     private val binding by lazy{
-        Signup2Binding.inflate(layoutInflater)
+        ActivityMainBinding.inflate(layoutInflater)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         Log.d(TAG, "onCreate: ")
 
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.extra_info)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        supportFragmentManager.beginTransaction().replace(binding.fragmentView.id, ViewPagerFragment()).commit()
 //        val years = (1923..2023).toList()
 //        val yearAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, years)
 //        yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -38,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
 
         // Spinner 초기화
-        setupSpinners()
+//        setupSpinners()
 
 
     }
