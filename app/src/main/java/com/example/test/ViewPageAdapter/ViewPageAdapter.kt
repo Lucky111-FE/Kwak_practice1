@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.test.RegisterExtraInfoFragment
 import com.example.test.RegisterFinishFragment
+import com.example.test.RegisterMountainStyleFragment
 import com.example.test.RegisterProfileFragment
 import com.example.test.RegisterStartFragment
 
@@ -18,9 +19,9 @@ class ViewPageAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(
     // 불러올 Fragment 정의
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> RegisterStartFragment()
-            1 -> RegisterExtraInfoFragment()
-            2 -> RegisterProfileFragment()
+            0 -> RegisterExtraInfoFragment()
+            1 -> RegisterProfileFragment()
+            2 -> RegisterMountainStyleFragment()
             3 -> RegisterFinishFragment()
             else -> throw IllegalArgumentException("Invalid position $position")
         }

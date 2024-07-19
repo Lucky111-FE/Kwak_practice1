@@ -23,6 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        supportFragmentManager.beginTransaction().replace(binding.fragmentView.id, ViewPagerFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(binding.fragmentView.id, RegisterStartFragment()).commit()
     }
 }

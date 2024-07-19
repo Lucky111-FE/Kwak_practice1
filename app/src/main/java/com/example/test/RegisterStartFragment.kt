@@ -17,7 +17,7 @@ class RegisterStartFragment : Fragment() {
         val binding = FragmentRegisterStartBinding.inflate(layoutInflater)
 
         binding.button.setOnClickListener {
-
+            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragment_view, ViewPagerFragment()).addToBackStack(null).commit()
         }
 
         return binding.root

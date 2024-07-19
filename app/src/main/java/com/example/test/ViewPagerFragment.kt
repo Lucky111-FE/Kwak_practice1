@@ -39,13 +39,16 @@ class ViewPagerFragment : Fragment() {
         val itemCount = binding.viewPager.adapter?.itemCount ?: 0
         Log.d(TAG, "checkViewPageLimit: ${binding.viewPager.childCount}")
         if(binding.viewPager.currentItem == itemCount-1){
-            binding.nextButton.visibility = View.GONE
+            binding.nextButton.visibility = View.INVISIBLE
+            binding.homeButton.visibility = View.VISIBLE
+
         }
         else{
             binding.nextButton.visibility = View.VISIBLE
+            binding.homeButton.visibility = View.INVISIBLE
         }
         if(binding.viewPager.currentItem == 0){
-            binding.prevButton.visibility = View.GONE
+            binding.prevButton.visibility = View.INVISIBLE
         }
         else{
             binding.prevButton.visibility = View.VISIBLE
